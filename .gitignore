@@ -3,3 +3,5 @@
 *.orig
 dwm
 .ccls-cache/
+
+a.out
