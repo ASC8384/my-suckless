@@ -1,15 +1,15 @@
 diff --git a/dmenu.c b/dmenu.c
-index ccf55b5..0eb4612 100644
+index ccf55b5..caa4895 100644
 --- a/dmenu.c
 +++ b/dmenu.c
-@@ -549,6 +549,7 @@ keypress(XKeyEvent *ev)
- 		case XK_j: ksym = XK_Next;  break;
- 		case XK_k: ksym = XK_Prior; break;
- 		case XK_l: ksym = XK_Down;  break;
-+		case XK_Tab: ksym = XK_Up;  break;
- 		default:
+@@ -606,6 +606,7 @@ insert:
  			return;
- 		}
+ 		/* fallthrough */
+ 	case XK_Up:
++	case XK_ISO_Left_Tab:
+ 		if (sel && sel->left && (sel = sel->left)->right == curr) {
+ 			curr = prev;
+ 			calcoffsets();
 @@ -641,13 +642,13 @@ insert:
  		if (lines > 0)
  			return;
