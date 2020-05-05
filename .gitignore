@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/c
 # Edit at https://www.gitignore.io/?templates=c
 
@@ -58,5 +57,10 @@ dkms.conf
 
 # End of https://www.gitignore.io/api/c
 
+*.o
+*.rej
+*.orig
 
-slock/slock
+dmenu
+stest
+slock
