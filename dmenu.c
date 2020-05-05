@@ -549,7 +549,6 @@ keypress(XKeyEvent *ev)
 		case XK_j: ksym = XK_Next;  break;
 		case XK_k: ksym = XK_Prior; break;
 		case XK_l: ksym = XK_Down;  break;
-		case XK_Tab: ksym = XK_Up;  break;
 		default:
 			return;
 		}
@@ -607,6 +606,7 @@ insert:
 			return;
 		/* fallthrough */
 	case XK_Up:
+	case XK_ISO_Left_Tab:
 		if (sel && sel->left && (sel = sel->left)->right == curr) {
 			curr = prev;
 			calcoffsets();
