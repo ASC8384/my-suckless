@@ -549,6 +549,7 @@ keypress(XKeyEvent *ev)
 		case XK_j: ksym = XK_Next;  break;
 		case XK_k: ksym = XK_Prior; break;
 		case XK_l: ksym = XK_Down;  break;
+		case XK_Tab: ksym = XK_Up;  break;
 		default:
 			return;
 		}
@@ -641,13 +642,13 @@ insert:
 		if (lines > 0)
 			return;
 		/* fallthrough */
-	case XK_Down:
+	case XK_Tab:
 		if (sel && sel->right && (sel = sel->right) == next) {
 			curr = next;
 			calcoffsets();
 		}
 		break;
-	case XK_Tab:
+	case XK_Down:
 		if (!sel)
 			return;
 		strncpy(text, sel->text, sizeof text - 1);
