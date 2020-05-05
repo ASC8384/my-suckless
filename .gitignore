@@ -61,6 +61,6 @@ dkms.conf
 *.rej
 *.orig
 
-dmenu
+dmenu/dmenu
 stest
-slock
+slock/slock
