@@ -59,8 +59,8 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 };
 
-/* key definitions */
-#define MODKEY Mod1Mask
+/* key definitions, Mod1Mask = Alt, Mod4Mask = Super */
+#define MODKEY Mod4Mask // Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
