@@ -78,9 +78,11 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 // mine
 static const char *slockcmd[] = { "slock", NULL };
-static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+4%", NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-4%", NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *upvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+4%", NULL };
+static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-4%", NULL };
+static const char *mutevolcmd[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *inclightcmd[]  = { "xbacklight", "-inc", "5", NULL };
+static const char *declightcmd[]  = { "xbacklight", "-dec", "5", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -122,9 +124,11 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 	// mine
 	{ MODKEY|ShiftMask,				XK_l,	   spawn,		   {.v = slockcmd} },
-	{ 0,         XF86XK_AudioLowerVolume,	   spawn,          {.v = downvol } },
-	{ 0,		 XF86XK_AudioRaiseVolume,	   spawn,          {.v = upvol   } },
-	{ 0,		 XF86XK_AudioMute,			   spawn,          {.v = mutevol } },
+	{ 0,         XF86XK_AudioLowerVolume,	   spawn,          {.v = downvolcmd } },
+	{ 0,		 XF86XK_AudioRaiseVolume,	   spawn,          {.v = upvolcmd   } },
+	{ 0,		 XF86XK_AudioMute,			   spawn,          {.v = mutevolcmd } },
+	{ 0,         XF86XK_MonBrightnessUp,	   spawn,		   {.v = inclightcmd } },
+	{ 0,         XF86XK_MonBrightnessDown,	   spawn,		   {.v = declightcmd } },
 };
 
 /* button definitions */
