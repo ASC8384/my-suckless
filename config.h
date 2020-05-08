@@ -83,6 +83,7 @@ static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-
 static const char *mutevolcmd[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *inclightcmd[]  = { "xbacklight", "-inc", "5", NULL };
 static const char *declightcmd[]  = { "xbacklight", "-dec", "5", NULL };
+static const char *printscreencmd[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -125,11 +126,13 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 	// mine
 	{ MODKEY|ShiftMask,				XK_l,	   spawn,		   {.v = slockcmd} },
-	{ 0,         XF86XK_AudioLowerVolume,	   spawn,          {.v = downvolcmd } },
-	{ 0,		 XF86XK_AudioRaiseVolume,	   spawn,          {.v = upvolcmd   } },
-	{ 0,		 XF86XK_AudioMute,			   spawn,          {.v = mutevolcmd } },
-	{ 0,         XF86XK_MonBrightnessUp,	   spawn,		   {.v = inclightcmd } },
-	{ 0,         XF86XK_MonBrightnessDown,	   spawn,		   {.v = declightcmd } },
+	{ 0,         XF86XK_AudioLowerVolume,	   spawn,          {.v = downvolcmd} },
+	{ 0,		 XF86XK_AudioRaiseVolume,	   spawn,          {.v = upvolcmd} },
+	{ 0,		 XF86XK_AudioMute,			   spawn,          {.v = mutevolcmd} },
+	{ 0,         XF86XK_MonBrightnessUp,	   spawn,		   {.v = inclightcmd} },
+	{ 0,         XF86XK_MonBrightnessDown,	   spawn,		   {.v = declightcmd} },
+	{ 0,							XK_Print,  spawn,		   {.v = printscreencmd} },
+	{ ControlMask|Mod1Mask,			XK_a,	   spawn,		   {.v = printscreencmd} },
 };
 
 /* button definitions */
