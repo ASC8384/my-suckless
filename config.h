@@ -190,8 +190,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,/*Alt*/	XK_j,		kscrolldown,	{.i =  1} },
-	{ MODKEY, 		XK_k,		kscrollup,	{.i =  1} },
+	{ Mod1Mask,/*Alt*/		XK_w,			kscrolldown,	{.i =  1} },
+	{ Mod1Mask,				XK_s,			kscrollup,		{.i =  1} },
 	/*{ MODKEY|ControlMask,	XK_j,		kscrolldown,	{.i = -1} },
 	{ MODKEY|ControlMask, 	XK_k,		kscrollup,	{.i = -1} },*/
 };
