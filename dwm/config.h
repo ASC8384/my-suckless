@@ -78,9 +78,9 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 // mine
 static const char *slockcmd[] = { "slock", NULL };
-static const char *upvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+4%", NULL };
-static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-4%", NULL };
-static const char *mutevolcmd[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *upvolcmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+4%", NULL };
+static const char *downvolcmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-4%", NULL };
+static const char *mutevolcmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *inclightcmd[]  = { "xbacklight", "-inc", "5", NULL };
 static const char *declightcmd[]  = { "xbacklight", "-dec", "5", NULL };
 static const char *printscreencmd[] = { "flameshot", "gui", NULL };
