@@ -133,6 +133,7 @@ static Key keys[] = {
 	{ 0,         XF86XK_MonBrightnessDown,	   spawn,		   {.v = declightcmd} },
 	{ 0,							XK_Print,  spawn,		   {.v = printscreencmd} },
 	{ ControlMask|Mod1Mask,			XK_a,	   spawn,		   {.v = printscreencmd} },
+	{ Mod1Mask,                     XK_Tab,    view,           {0} },
 };
 
 /* button definitions */
