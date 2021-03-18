@@ -4,7 +4,5 @@
 进入 dwm 文件夹后，
 
 ```bash
-make clean install
-make
-sudo make install
+sudo make clean install
 ```
