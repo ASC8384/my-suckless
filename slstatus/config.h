@@ -66,9 +66,13 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
 	// { vol_perc, "%s | ", "/dev/mixer"},
-    { run_command, "[VOL %s%%] ", "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"" },
-	{ battery_perc, "电池：%s | ",	"BAT0"},
+    { run_command, "[ %s%%] ", "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"" },
+	// { temp, " %s | " , "/sys/class/thermal/"},
+	// { temp, " %s | " , "/sys/devices/platform/coretemp.0/hwmon/hwmon?/temp2_input"},
+	{ battery_perc, "🔋：%s | ", "BAT0"},
+	{ netspeed_rx, "↓：%s | ", "wlp0s20f3"},
+	{ netspeed_tx, "↑: %s | ", "wlp0s20f3"},
+	{ cpu_perc, "：%s | "},
+	{ ram_perc, "：%s | "},
 	{ datetime, "%s | ",           "%F %T" },
-	{ ram_perc, "内存：%s | "},
-
 };
